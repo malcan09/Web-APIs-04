@@ -1,0 +1,50 @@
+/* Navbar */
+.container-bar {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Score and Time */
+.time {
+    float: right;
+    font-family: 'Mukta', sans-serif;
+}
+
+.score {
+    float: left;
+    font-family: 'Mukta', sans-serif;
+}
+
+#score-box {
+        display: block;
+        background-color: white;
+        display: inline-block;
+        width: 98vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        margin: 20px;
+    }
+
+    /*  Quiz Body */
+
+#Quiz {
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+    font-weight: bolder;
+}
+
+button {
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 16px 10px 16px;
+    font-size: 15px;
+    font-family: 'Mukta', sans-serif;
+    margin: 6px;
+}
+/* footer */
+#footer {
+    font-family: 'Mukta', sans-serif;
+
+}
+
