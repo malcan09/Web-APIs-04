@@ -1,13 +1,13 @@
-//arrray of the quiz questions, avaialble choices, and correct answers     
-var questions = [{
-    title: "Which of the following function of an array object adds one or more elements to the front of an array and returns the new length of the array?",
-    choices: ["unshift( )", "sort( )", "splice( )", "toString( )"],
-    answer: "unshift( )"
+//Questions for Quiz Arrays    
+const questions = [{
+    title: "Which of the following is an advantage of using JavaScript?",
+    choices: ["Less server interaction( )", "Immediate feedback to the visitors( )", " Increased interactivity( )", "All of the above( )"],
+    answer: "All of the above( )"
 },
 {
-    title: "Which built-in method adds one or more elements to the end of an array and returns the new length of the array?",
-    choices: ["last( )", "put( )", "push( )", "pop( )"],
-    answer: "push( )"
+    title: "Which built-in method returns the index within the calling String object of the first occurrence of the specified value?",
+    choices: ["getIndex( )", "location(( )", "indexOf( )", " None of the above( )"],
+    answer: "indexOf( )"
 },
 {
     title: " Which built-in method returns the characters in a string beginning at the specified location?",
@@ -15,9 +15,9 @@ var questions = [{
     answer: "substr( )"
 },
 {
-    title: "Which of the following function of an array object adds and/or removes elements from an array?",
-    choices: ["toSource( )", "sort( )", "unshift( )", "splice( )"],
-    answer: "splice( )"
+    title: "Which built-in method returns the calling string value converted to upper case?",
+    choices: ["toUpperCase( )", "toUpper( )", "changeCase( )", "None of the above( )"],
+    answer: "toUpperCase( )"
 },
 {
     title: "Which of the following function of String object combines the text of two strings and returns a new string?",
@@ -25,14 +25,13 @@ var questions = [{
     answer: "concat( )"
 }
 ]
+// Variables
+let score = 0;
+let currentQuestion = -1;
+let timeLeft = 0;
+let timer;
 
-//setting the numerical variables for the functions.. scores and timers.. 
-var score = 0;
-var currentQuestion = -1;
-var timeLeft = 0;
-var timer;
-
-//starts the countdown timer once user clicks the 'start' button
+//Start button
 function start() {
 
 timeLeft = 75;
@@ -41,7 +40,6 @@ document.getElementById("timeLeft").innerHTML = timeLeft;
 timer = setInterval(function() {
     timeLeft--;
     document.getElementById("timeLeft").innerHTML = timeLeft;
-    //proceed to end the game function when timer is below 0 at any time
     if (timeLeft <= 0) {
         clearInterval(timer);
         endGame(); 
@@ -51,21 +49,21 @@ timer = setInterval(function() {
 next();
 }
 
-//stop the timer to end the game 
+//End Quiz 
 function endGame() {
 clearInterval(timer);
 
 var quizContent = `
-<h2>Game over!</h2>
+<h2> TIME UP!</h2>
 <h3>You got a ` + score +  ` /100!</h3>
 <h3>That means you got ` + score / 20 +  ` questions correct!</h3>
-<input type="text" id="name" placeholder="First name"> 
+<input type="text" id="name" placeholder="First and Last Name"> 
 <button onclick="setScore()">Set score!</button>`;
 
 document.getElementById("main-quiz").innerHTML = quizContent;
 }
 
-//store the scores on local storage
+//Score Results
 function setScore() {
 localStorage.setItem("highscore", score);
 localStorage.setItem("highscoreName",  document.getElementById('name').value);
@@ -85,7 +83,6 @@ var quizContent = `
 document.getElementById("main-quiz").innerHTML = quizContent;
 }
 
-//clears the score name and value in the local storage if the user selects 'clear score'
 function clearScore() {
 localStorage.setItem("highscore", "");
 localStorage.setItem("highscoreName",  "");
