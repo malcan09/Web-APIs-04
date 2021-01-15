@@ -5,5 +5,6 @@ To be able to complete the quiz, I had to first creative the web page in which c
 
 Working with JavaScript in order to make the quiz alive was something new and different. I was able to completed this part of the assignment by simply googling every details to come up with the best possible way to get it done. 
 
-
+Here is the link to my Web.
+https://malcan09.github.io/Web-APIs-04/.
 <img src="assets/CodeQuiz.jpg" alt="Quiz Picture">
